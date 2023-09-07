@@ -21,8 +21,11 @@
             <label for="foto">Selecciona tu foto</label>
             <input type="file" id="foto" name="foto">
 
-            <label for="foto">Selecciona tu foto</label>
-            <input type="file" id="foto" name="foto">
+            <label for="foto">Titulo de la foto</label>
+            <input type="text" id="titulo" name="titulo">
+
+            <label for="foto">Descripción:</label>
+            <textarea name="texto" id="texto" placeholder="Ingresa una descripción:"></textarea>
         </form>
     </div>
     <footer>
