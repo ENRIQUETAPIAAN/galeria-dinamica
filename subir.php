@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)){
         $statement = $conexion->prepare('INSERT INTO tb_galeria(titulo, imagen, texto) VALUES(:titulo, :imagen, :texto)');
         $statement->execute(array(':titulo' => $_POST['titulo'], ':imagen' => $_FILES['foto']['name'],':texto'=>$_POST['texto']));
 
-        header('Location: index.php');
+        //header('Location: index.php');
     } else{
         $error = "El archivo no es una imagen o el archivo es muy pesado";
     }
