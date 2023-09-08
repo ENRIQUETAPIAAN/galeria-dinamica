@@ -18,49 +18,21 @@
     </header>
     <section class="fotos">
         <div class="contenedor">
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/1.jpg" alt="primera foto">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/2.jpg" alt="primera foto">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/3.jpg" alt="primera foto">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/4.jpg" alt="primera foto">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/5.jpg" alt="primera foto">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/6.jpg" alt="primera foto">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/7.jpg" alt="primera foto">
-                </a>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="fotos/8.jpg" alt="primera foto">
-                </a>
-            </div>
+            <?php foreach($fotos as $foto): ?>
+                <div class="thumb">
+                    <a href="foto.php?id=<?php echo $foto['id_imagen']; ?>">
+                        <img src="fotos/<?php echo $foto['imagen']; ?>" alt="<?php echo $foto['titulo']; ?>">
+                    </a>
+                </div>
+            <?php endforeach;?>
             <div class="paginacion">
-                <a href="#" class="izquierda"><i class="fa fa-arrow-left"></i> Pagina anterior</a>
-                <a href="#" class="derecha">Pagina siguiente<i class="fa fa-arrow-right"></i> </a>
+                <?php if($pagina_actual > 1): ?>
+                    <a href="index.php?p=<?php echo $pagina_actual -1; ?>" class="izquierda"><i class="fa fa-arrow-left"></i> Pagina anterior</a>
+                <?php endif;?>
+
+                <?php if($total_paginas != $pagina_actual): ?>
+                    <a href="index.php?p=<?php echo $pagina_actual + 1; ?>" class="derecha">Pagina siguiente<i class="fa fa-arrow-right"></i></a>
+                <?php endif;?>
             </div>
         </div>
     </section>
